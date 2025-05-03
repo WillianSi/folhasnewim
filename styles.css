@@ -1,199 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
-
-
-main.main {
-  background-color: #020024;
-  padding: 20px 0 20px 0;
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-main.main h1 {
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-.details {
-  background: #22c1c3;
-  background: -webkit-gradient(linear, left bottom, left top, from(#22c1c3), to(rgba(45, 253, 146, 0.510242)));
-  background: linear-gradient(0deg, #22c1c3 0%, rgba(45, 253, 146, 0.510242) 100%);
-  padding: 15px 7px 15px 7px;
-  border-radius: 5px;
-}
-
-.details details {
-  max-width: 920px;
-  color: #111;
-  margin: 0 5px;
-}
-
-.details details p {
-  padding: 20px 0 20px 0;
-}
-
-div.center-align {
-  display: -webkit-box;
-  display: -ms-flexbox;
+html, body {
+  height: 100%;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 90vh;
-  position: relative;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f0fff4, #e6fff0); /* verde-claro suave */
 }
 
-div.center-align div.limit-size {
-  width: 900px;
-  position: relative;
-}
-
-div.center-align div.limit-size div.content-details {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: absolute;
-  top: -50px;
-  right: 0;
-  cursor: pointer;
-}
-
-div.send-image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.8rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-div.send-image button.btn {
-  border: none;
-  background-color: #3857c9;
-  padding: 1rem;
-  border-radius: 10%;
+.page-header {
+  background-color: #2f9e41; /* verde principal */
+  padding: 1rem 0;
   color: white;
-  cursor: pointer;
 }
 
-div.send-image label {
-  max-width: 760px;
-  padding: 0.7rem;
-  border: 1px solid #fff;
-  border-radius: 0.6rem;
-  width: 100%;
-  background-color: #fff;
+.page-header .header-logo {
+  width: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.page-header p {
+  font-size: 0.9rem;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 1rem;
+}
+
+.load-image img {
+  border: 6px solid white;
+  border-radius: 10px;
+  max-width: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.send-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.send-image label {
+  background-color: white;
+  padding: 0.7rem 1rem;
+  border: 2px dashed #2f9e41;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: bold;
-  border: none;
-  cursor: pointer;
-  color: #1a1a1a;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-div.send-image label input[type="file"] {
+.send-image label:hover {
+  background-color: #e6fff0;
+  border-color: #1e6f2f;
+}
+
+.send-image input[type="file"] {
   display: none;
 }
 
-div.send-image label:hover {
-  background-color: #8ba4ee;
-}
-
-div.options {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-div.options ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1rem;
-  text-transform: uppercase;
+.btn-send {
+  background-color: #2f9e41;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
   font-weight: bold;
-  color: #fff;
-  padding-top: 5rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-div.options ul li:nth-child(2n) {
-  background-color: #008d4b;
-  padding: 20px 50px;
-  border: none;
-  border-radius: 0.5rem;
+.btn-send:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-div.options ul li:nth-child(2n + 1) {
-  background-color: #6270be;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 0.5rem;
+.result-display {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e6f2f; /* verde mais escuro */
 }
 
-div.options ul li.select {
-  border: 4px solid #fff;
-  padding: 15px 40px;
+.footer {
+  background-color: #2f9e41;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
 }
 
-div.load-image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px;
-}
-
-div.load-image img {
-  border: 10px solid white;
-  border-radius: 10px;
-  max-height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media only screen and (max-width: 700px) {
-  * ul {
-    gap: 15px;
-  }
-  * li {
-    width: 100%;
-  }
-  div.send-image {
-    padding: 0 20px;
-  }
-}
-/*# sourceMappingURL=styles.css.map */
